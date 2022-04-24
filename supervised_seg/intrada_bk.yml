@@ -1,0 +1,14 @@
+SOURCE: CityscapesEasy
+TARGET: CityscapesEasy
+#DATA_DIRECTORY_TARGET: ../ADVENT/data/Cityscapes
+NUM_WORKERS: 4
+TRAIN:
+  INPUT_SIZE_SOURCE:
+    - 512
+    - 512
+  DA_METHOD: AdvEnt
+  MODEL: DeepLabv2
+  RESTORE_FROM: ../ADVENT/experiments/snapshots_lr-3_nomean_dpg_cnds_512/GTA2Cityscapes_DeepLabv2_AdvEnt/model_12000.pth
+  MULTI_LEVEL: True
+TEST:
+  MODE: best
